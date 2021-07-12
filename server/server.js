@@ -21,8 +21,8 @@ app.get('/jobs', async (req, res) => {
       page = parseInt(page);
       page = isNaN(page) ? '' : `&page=${page}`;
     }
-   // const query = `https://jobs.github.com/positions.json?description=${description}&location=${location}${full_time}${page}`;
-   const query = `https://011be9b0-00a2-467b-9ff7-3367ad5aa428.mock.pstmn.io?description=${description}&location=${location}${full_time}${page}`;
+    const query = `https://jobs.github.com/positions.json?description=${description}&location=${location}${full_time}${page}`;
+   //const query = `https://011be9b0-00a2-467b-9ff7-3367ad5aa428.mock.pstmn.io?description=${description}&location=${location}${full_time}${page}`;
     const result = await axios.get(query);
     res.send(result.data);
   } catch (error) {
